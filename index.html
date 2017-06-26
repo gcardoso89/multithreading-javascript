@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Multithreading JavaScript in your browser</title>
-	<link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-united.min.css">
+	<link rel="stylesheet" href="css/default.css">
 </head>
 <body>
 <header>
@@ -18,8 +19,12 @@
 </header>
 <main class="container">
 	<div class="row">
-		<div class="col-md-12">
-			<form class="form-inline">
+		<div class="col-xs-8">
+			<form class="">
+				<div class="form-group">
+					<label for="numberOfCars">Wallet</label>
+					<p class="form-control-static">0€</p>
+				</div>
 				<div class="form-group">
 					<label for="numberOfCars">Number of Cars</label>
 					<input type="text" class="form-control" id="numberOfCars" value="10000">
@@ -32,7 +37,48 @@
 		</div>
 	</div>
 	<div class="row">
-
+		<div class="col-xs-4" id="thread-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">25 de Abril Bridge</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>Started at: <span id="thread-1-start"></span></li>
+						<li>Time spent: <span id="thread-1-finished"></span></li>
+						<li>Cars processed: <span id="thread-1-totalcars"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4" id="thread-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Vasco da Gama Bridge</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>Started at: <span id="thread-2-start"></span></li>
+						<li>Time spent: <span id="thread-2-finished"></span></li>
+						<li>Cars processed: <span id="thread-2-totalcars"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4" id="thread-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">D. Marcelo, O Afectuoso Bridge (why not?)</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>Started at: <span id="thread-3-start"></span></li>
+						<li>Time spent: <span id="thread-3-finished"></span></li>
+						<li>Cars processed: <span id="thread-3-totalcars"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
 </body>
