@@ -1,0 +1,28 @@
+{
+  "name": "multithreading-javascript",
+  "version": "1.0.0",
+  "description": "Multithreading Javascript in your browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcardoso89/multithreading-javascript.git"
+  },
+  "keywords": [
+    "multithreading",
+    "javascript",
+    "browser",
+    "frontend"
+  ],
+  "author": "Gonçalo Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcardoso89/multithreading-javascript/issues"
+  },
+  "homepage": "https://github.com/gcardoso89/multithreading-javascript#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
