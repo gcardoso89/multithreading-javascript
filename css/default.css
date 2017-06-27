@@ -9,9 +9,3 @@
 #thread-2, #thread-3 {
 	display: none;
 }
-
-#thread-1 .panel-body ul,
-#thread-2 .panel-body ul,
-#thread-3 .panel-body ul {
-	opacity: 0
-}
