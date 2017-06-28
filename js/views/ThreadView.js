@@ -1,4 +1,4 @@
-(function() {
+(function () {
 	// thread selectors prefix and sufixes
 	const threadPrefixSelector = 'thread-';
 	const threadStartSelector = '-start';
@@ -20,47 +20,59 @@
 		 * Converts the number into date string and writes in the thread container
 		 * @param startValue
 		 */
-		updateStart( startValue ){
-			this._start.innerText = startValue;
+		updateStart( startValue ) {
+			if ( this._container ){
+				this._start.innerText = startValue;
+			}
 		}
 
 		/**
 		 * Converts the number into miliseconds string and writes in the thread container
 		 * @param timeSpent
 		 */
-		updateTimeSpent( timeSpent ){
-			this._timeSpent.innerText = `${timeSpent} ms`;
+		updateTimeSpent( timeSpent ) {
+			if ( this._container ){
+				this._timeSpent.innerText = `${timeSpent} ms`;
+			}
 		}
 
 		/**
 		 *  Converts the number into 'total cars' string and Writes the number of cars processed in the thread container
 		 * @param carsTotal
 		 */
-		updateCarsTotal( carsTotal ){
-			this._carsTotal.innerText = `${carsTotal} cars`;
+		updateCarsTotal( carsTotal ) {
+			if ( this._container ){
+				this._carsTotal.innerText = `${carsTotal} cars`;
+			}
 		}
 
 		/**
 		 * Cleans all the information present within the thread container
 		 */
-		cleanInfo(){
-			this._start.innerText = '';
-			this._timeSpent.innerText = '';
-			this._carsTotal.innerText = '';
+		cleanInfo() {
+			if ( this._container ){
+				this._start.innerText = '';
+				this._timeSpent.innerText = '';
+				this._carsTotal.innerText = '';
+			}
 		}
 
 		/**
 		 * Hides the thread container
 		 */
-		hide(){
-			this._container.style = 'display:none';
+		hide() {
+			if ( this._container ) {
+				this._container.style = 'display:none';
+			}
 		}
 
 		/**
 		 * Shows the thread container
 		 */
-		show(){
-			this._container.style = 'display:block';
+		show() {
+			if ( this._container ) {
+				this._container.style = 'display:block';
+			}
 		}
 	}
 
