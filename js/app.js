@@ -27,9 +27,14 @@ let mtJs = {};
 		 * Initializes the first thread (the browser counter, basically)
 		 * We are not initializing them in the constructor just because the class is not available at this moment (is only declared after)
 		 */
-		init() {
-			this._createThread( true );
-			this._createThread( true );
+		init( numberOfThreads, firstOutsideWorker ) {
+			for ( let i = 0; i < numberOfThreads; i++ ) {
+				if ( firstOutsideWorker && i === 0 ){
+					this._createThread( false );
+				} else {
+					this._createThread( true );
+				}
+			}
 		}
 
 		/**
@@ -58,13 +63,10 @@ let mtJs = {};
 				} else {
 					total = iptValue - totalCount;
 				}
-				setTimeout( () => {
-						this._threads[ i ].start( total )
-							.then( ( dataTotal ) => {
-								this._runningThreads++;
-							} );
-					}
-					, 1 );
+				this._threads[ i ].start( total )
+					.then( ( dataTotal ) => {
+						this._runningThreads++;
+					} );
 				totalCount += total;
 			}
 		}

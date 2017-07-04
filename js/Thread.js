@@ -12,7 +12,7 @@
 			this._currentPromiseResolve = null;
 
 			if ( useWorker ) {
-				this._worker = new Worker( `js/threadWorker${threadNumber}.js` );
+				this._worker = new Worker( `js/threadWorker.js` );
 				this._worker.onmessage = ( event ) => this._onWorkerMessage( event.data );
 			}
 
@@ -75,10 +75,13 @@
 		 */
 		_startProcessingData( total ) {
 			return new Promise( ( resolve ) => {
-				this._currentPromiseResolve = resolve;
-				this._dataTotal = processFixedData( total );
-				this._timeSpentTimer = performance.now() - this._startTimer;
-				this._processingFinished();
+				// move this execution into the queue, to avoid blocking the background thread execution
+				setTimeout( () => {
+					this._currentPromiseResolve = resolve;
+					this._dataTotal = processFixedData( total );
+					this._timeSpentTimer = performance.now() - this._startTimer;
+					this._processingFinished();
+				}, 1 );
 			} );
 		}
 
